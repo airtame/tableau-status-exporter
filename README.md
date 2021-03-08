@@ -12,7 +12,7 @@ Reads and parses the /admin/systeminfo.xml page and exports the number of proces
 
 1. Clone the project
 2. Create config file based on config.yml.template. Configs:
-    * *tableau_user* and *tableau_password*: a Tableau Server user with administrative privileges
+    * *tableau_user* and *tableau_password*: a Tableau Server user with administrative privileges. Airtame-specific: Using personal access token.
     * *api_version*: REST API version for the Tableau Server version. See https://onlinehelp.tableau.com/current/api/rest_api/en-us/REST/rest_api_concepts_versions.htm
     * *server_host*: Tableau Server hostname, starting with http(s)://
     * *site*: The Tableau site to use (if empty, Default site is used)

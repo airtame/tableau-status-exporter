@@ -3,7 +3,7 @@ import os
 import requests
 import logging
 from prometheus_client import generate_latest, REGISTRY
-from server_parser_status_metrics import TableauServerStatusParser
+from tableau_exporter.server_parser_status_metrics import TableauServerStatusParser
 from prometheus_client.twisted import MetricsResource
 from twisted.web.server import Site
 from twisted.web.resource import Resource
@@ -16,8 +16,8 @@ class TokenManager(object):
     def __init__(self, user, password, site, host, api_version):
         self._token = None
         self._creds = {}
-        self._creds['name'] = user
-        self._creds['password'] = password
+        self._creds['personalAccessTokenName'] = user
+        self._creds['personalAccessTokenSecret'] = password
         self._creds['site'] = {'contentUrl': site}
         self._api_version = api_version
         self.host = host
